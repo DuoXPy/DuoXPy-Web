@@ -102,7 +102,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
               <Button 
                 className="w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-medium hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
-                onClick={() => navigate("/auth")}
+                onClick={() => window.open('https://discord.gg/Ysq7SFGks5', '_blank')}
               >
                 Get Started
               </Button>
