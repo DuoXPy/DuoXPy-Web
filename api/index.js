@@ -1,6 +1,36 @@
 const express = require('express');
 const app = express();
 
+// Modern design elements
+app.use((req, res, next) => {
+  res.locals.styles = `
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 10% 20%, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      font-family: 'Inter', sans-serif;
+    }
+    .api-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .endpoint-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .endpoint-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  `;
+  next();
+});
+
 const getHtml = (key) => `
 <!DOCTYPE html>
 <html>
@@ -175,7 +205,7 @@ const getHtml = (key) => `
             <a href="https://github.com/gorouflex/DuoXPyMax" class="button">GitHub</a>
         </div>
         <div class="footer">
-            Made with ❤️ by GorouFlex and NotchApple1703
+            Made with ❤️ by GorouFlex, smh and NotchApple1703
         </div>
     </div>
     <script>
@@ -237,7 +267,7 @@ const getLinkHtml = (link) => `
             <a href="https://github.com/gorouflex/DuoXPyMax" class="button">GitHub</a>
         </div>
         <div class="footer">
-            Made with ❤️ by GorouFlex and NotchApple1703
+            Made with ❤️ by GorouFlex,smh and NotchApple1703
         </div>
     </div>
     <script>
