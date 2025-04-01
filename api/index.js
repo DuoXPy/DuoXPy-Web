@@ -1,91 +1,6 @@
 const express = require('express');
 const app = express();
 
-// Modern design elements
-app.use((req, res, next) => {
-  res.locals.styles = `
-    body {
-      min-height: 100vh;
-      background: #000;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      overflow: hidden;
-    }
-    .api-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-    .endpoint-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-    .endpoint-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-    .spotlight {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 49;
-    }
-    .spotlight div {
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
-      background: radial-gradient(600px at 50% 50%, rgba(29, 78, 216, 0.15), transparent 80%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .blob {
-      position: absolute;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      mix-blend-mode: multiply;
-      filter: blur(72px);
-      animation: blob 6s infinite;
-    }
-    .blob:nth-child(1) {
-      background: rgba(156, 39, 176, 0.1);
-      top: 10%;
-      left: 25%;
-      animation-delay: 0s;
-    }
-    .blob:nth-child(2) {
-      background: rgba(0, 188, 212, 0.1);
-      top: 10%;
-      right: 25%;
-      animation-delay: 2s;
-    }
-    .blob:nth-child(3) {
-      background: rgba(233, 30, 99, 0.1);
-      bottom: 10%;
-      left: 33%;
-      animation-delay: 4s;
-    }
-    @keyframes blob {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-    }
-  `;
-  next();
-});
-
 const getHtml = (key) => `
 <!DOCTYPE html>
 <html>
@@ -252,12 +167,6 @@ const getHtml = (key) => `
     </style>
 </head>
 <body>
-    <div class="spotlight">
-      <div></div>
-    </div>
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="blob"></div>
     <div class="container">
         <h1 class="key">${key}</h1>
         <button class="button" id="copyButton">Copy Key</button>
@@ -320,12 +229,6 @@ const getLinkHtml = (link) => `
     </style>
 </head>
 <body>
-    <div class="spotlight">
-      <div></div>
-    </div>
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="blob"></div>
     <div class="container">
         <h1 class="key">${link}</h1>
         <a href="${link}" class="button">Go to Link</a>
@@ -367,37 +270,6 @@ app.get('/get-link', (req, res) => {
 app.get('/get-url', (req, res) => {
     const demoKey = req.query.demo_key;
     res.send(getHtml(demoKey));
-});
-
-app.get('/', (req, res) => {
-  res.send(`
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>DuoXPy API</title>
-    <style>${res.locals.styles}</style>
-  </head>
-  <body>
-    <div class="spotlight">
-      <div></div>
-    </div>
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="api-container">
-      <h1 style="font-size: 3rem; font-weight: bold; text-align: center; margin-bottom: 2rem;">DuoXPy API</h1>
-      <div class="endpoint-card">
-        <h2>GET /api/v1/status</h2>
-        <p>Check API status and version information.</p>
-      </div>
-      <div class="endpoint-card">
-        <h2>POST /api/v1/process</h2>
-        <p>Submit data for processing.</p>
-      </div>
-    </div>
-  </body>
-  </html>
-  `);
 });
 
 module.exports = app;
