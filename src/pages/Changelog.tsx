@@ -37,6 +37,13 @@ export default function Changelog() {
             </div>
             <div className="space-y-4">
               <div>
+                <h3 className="font-medium mb-2">v3.9.5 Tunned 2</h3>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Decreased Loops from 2000 loops/12h to 1000 loops/12h</li>
+                  <li>Hotfixes: Fixed a issue that make Checker and Saver won't run properly (only run 50%) and reorder logic</li>
+                </ul>
+              </div>
+              <div>
                 <h3 className="font-medium mb-2">v3.9.5 Advanced</h3>
                 <ul className="list-disc pl-6 space-y-1">
                   <li>Improved support for Checkers, Savers, and account management</li>
