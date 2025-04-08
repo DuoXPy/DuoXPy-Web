@@ -83,7 +83,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative">
           <div className="text-center space-y-8 animate-fade-down max-w-5xl mx-auto">
             <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full mb-8 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-              <span className="text-white/90 text-sm font-medium">New: v3.9.5 NFKD Tunned 2 Just Dropped ✨</span>
+              <span className="text-white/90 text-sm font-medium">New: v3.9.6 Patch 1 Just Dropped ✨</span>
             </div>
             
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white relative z-10 hover:scale-[1.02] transition-transform duration-500">
@@ -199,35 +199,35 @@ const Index = () => {
                 price: "$2.00",
                 features: ["Full access","No limits"],
                 buttonText: "Subscribe",
-                link: "https://duoxpy.mysellauth.com/product/1-month"
+                link: "https://duoxpy.sell.app/product/1-month?store=duoxpy&quantity=1"
               },
               {
                 title: "3 Months",
                 price: "$5.00",
                 features: ["Full access","No limits"],
                 buttonText: "Subscribe",
-                link: "https://duoxpy.mysellauth.com/product/3-months"
+                link: "https://duoxpy.sell.app/product/3-month-key?store=duoxpy&quantity=1"
               },
               {
                 title: "6 Months",
                 price: "$10.00",
                 features: ["Full access","No limits"],
                 buttonText: "Subscribe",
-                link: "https://duoxpy.mysellauth.com/product/6-months"
+                link: "https://duoxpy.sell.app/product/6-month-key?store=duoxpy&quantity=1"
               },
               {
                 title: "12 Months",
                 price: "$15.00",
                 features: ["Full access","No limits"],
                 buttonText: "Subscribe",
-                link: "https://duoxpy.mysellauth.com/product/12-months"
+                link: "https://duoxpy.sell.app/product/12-month-key?store=duoxpy&quantity=1"
               },
               {
                 title: "Lifetime",
                 price: "$20.00",
                 features: ["Full access","No limits"],
                 buttonText: "Subscribe",
-                link: "https://duoxpy.mysellauth.com/product/lifetime",
+                link: "https://duoxpy.sell.app/product/lifetime-key?store=duoxpy&quantity=1",
                 bestValue: true
               }
             ].map((plan, index) => (
