@@ -267,8 +267,8 @@ app.get('/get-link', (req, res) => {
     res.send(getLinkHtml(link));
 });
 
-app.get('/get-url', (req, res) => {
-    const demoKey = req.query.demo_key;
+app.get('/get-key', (req, res) => {
+    const demoKey = req.query.key;
     res.send(getHtml(demoKey));
 });
 
