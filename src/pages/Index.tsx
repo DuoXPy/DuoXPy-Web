@@ -83,7 +83,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative">
           <div className="text-center space-y-8 animate-fade-down max-w-5xl mx-auto">
             <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full mb-8 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-              <span className="text-white/90 text-sm font-medium">New: v3.9.6 Patch 1 Just Dropped ✨</span>
+              <span className="text-white/90 text-sm font-medium">New: v3.9.6 Patch 2 Just Dropped ✨</span>
             </div>
             
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white relative z-10 hover:scale-[1.02] transition-transform duration-500">
