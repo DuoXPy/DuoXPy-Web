@@ -21,9 +21,6 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 function generateLicenseKey() {
   return 'DXP-' + crypto.randomBytes(16).toString('hex').toUpperCase();
 }
-
-
-
 const getHtml = (key) => `
 <!DOCTYPE html>
 <html>
@@ -203,7 +200,11 @@ const getHtml = (key) => `
     </div>
     <script>
         const copyButton = document.getElementById('copyButton');
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 2d28f32f4377e20ae7690ddf6505847c460b349f
         copyButton.addEventListener('click', function() {
             const textArea = document.createElement('textarea');
             textArea.value = "${key}";
@@ -211,7 +212,6 @@ const getHtml = (key) => `
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
-
             copyButton.textContent = 'Copied!';
             setTimeout(() => copyButton.textContent = 'Copy Key', 2000);
         });
@@ -229,7 +229,6 @@ const getHtml = (key) => `
 
                     ripple.style.left = x + 'px';
                     ripple.style.top = y + 'px';
-
                     setTimeout(() => ripple.remove(), 600);
                 }
             });
@@ -276,7 +275,6 @@ const getLinkHtml = (link) => `
 
                 ripple.style.left = x + 'px';
                 ripple.style.top = y + 'px';
-
                 setTimeout(() => ripple.remove(), 600);
             });
         });
@@ -426,5 +424,4 @@ app.post('/confirm-payment', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
-
 module.exports = app;

@@ -85,7 +85,6 @@ const Index = () => {
             <div className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full mb-8 hover:bg-white/20 transition-all duration-300 cursor-pointer">
               <span className="text-white/90 text-sm font-medium">New: v3.9.6 Patch 2 Just Dropped ✨</span>
             </div>
-
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white relative z-10 hover:scale-[1.02] transition-transform duration-500">
               The easiest way to
               <br />
@@ -93,7 +92,6 @@ const Index = () => {
                 dominate everyone in your leagues.
               </span>
             </h1>
-
             <p className="text-xl text-white/60 max-w-2xl mx-auto animate-fade-up delay-200">
               One platform for accelerating your language learning journey.
               Master new languages in seconds, not months.
